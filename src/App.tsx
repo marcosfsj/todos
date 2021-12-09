@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {Routes, Route} from 'react-router-dom';
+import TodosPage from './pages/todos/todos-page';
+import Spinner from './components/Spinner';
+import NavBar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Spinner />
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<TodosPage />} />
+        <Route path="/todos-context-api" element={<div>Using context api</div>} />
+        <Route path="/todos-page" element={<TodosPage />} />
+      </Routes>
+    </>
   );
 }
 
