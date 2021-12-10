@@ -2,21 +2,26 @@ import React from 'react';
 import styled from 'styled-components';
 
 interface BtnProps {
-  readonly primary?: boolean;
-  readonly secondary?: boolean;
+  primary?: boolean;
+  secondary?: boolean;
 }
 
-const Btn = styled.button<BtnProps>``;
+const Btn = styled.button<BtnProps>`
+  color: ${({primary}: BtnProps) => (primary ? 'red' : 'blue')};
+  width: 100px;
+`;
 
 interface ButtonProps {
   children: React.ReactNode;
   primary?: boolean;
   secondary?: boolean;
+  disabled?: boolean;
+  onClick: () => void;
 }
 
-const Button = ({children, primary, secondary}: ButtonProps) => {
+const Button = ({children, primary, secondary, disabled, onClick}: ButtonProps) => {
   return (
-    <Btn primary={primary} secondary={secondary}>
+    <Btn primary={primary} secondary={secondary} disabled={disabled} onClick={onClick}>
       {children}
     </Btn>
   );

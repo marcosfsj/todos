@@ -9,7 +9,9 @@ const api = axios.create({
 });
 
 api.interceptors.request.use(async config => {
-  config.headers.Authorization = process.env.REACT_APP_BEARER;
+  config.headers = {
+    Authorization: process.env.REACT_APP_BEARER || '',
+  };
   return config;
 });
 

@@ -4,6 +4,7 @@ import PageTitle from '../../components/PageTitle';
 import styled from 'styled-components';
 import TodosItem from './todos-item';
 import Todo from '../../interfaces/Todo';
+import Button from '../../components/Button';
 
 const MainPanel = styled.div`
   display: flex;
@@ -38,10 +39,6 @@ const ButtonArea = styled.div`
   display: grid;
   justify-items: center;
   padding-left: 7px;
-`;
-
-const Button = styled.button`
-  width: 100px;
 `;
 
 const TodosPage = () => {
