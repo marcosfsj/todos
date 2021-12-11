@@ -1,7 +1,16 @@
-import React from 'react';
+import styled from 'styled-components';
 
-const Input = () => {
-  return <input />;
-};
+interface InputProps {
+  primary?: boolean;
+  secondary?: boolean;
+}
 
-export default React.memo(Input);
+const Input = styled.input<InputProps>`
+  color: ${({primary, theme}) =>
+    primary ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText};
+  background-color: ${({primary, theme}) =>
+    primary ? theme.palette.primary.main : theme.palette.secondary.main};
+  width: 100px;
+`;
+
+export default Input;

@@ -1,5 +1,6 @@
 import React from 'react';
 import {useDeleteTodoMutation, useToggleTodoCompletedMutation} from '../../api/todos.api';
+import Button from '../../components/Button';
 import styled from 'styled-components';
 
 const Line = styled.div`
@@ -24,10 +25,6 @@ const DeleteButtonArea = styled.div`
   display: grid;
   justify-items: center;
   align-items: center;
-`;
-
-const DeleteButton = styled.button`
-  width: 100px;
 `;
 
 interface TodosItemProps {
@@ -62,7 +59,9 @@ const TodosItem = ({_id, description, completed}: TodosItemProps) => {
         <Description>{description}</Description>
       </DescriptionArea>
       <DeleteButtonArea>
-        <DeleteButton onClick={handleDeleteClick}>Delete</DeleteButton>
+        <Button secondary onClick={handleDeleteClick}>
+          Delete
+        </Button>
       </DeleteButtonArea>
     </Line>
   );

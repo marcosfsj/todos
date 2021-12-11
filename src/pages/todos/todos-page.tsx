@@ -1,10 +1,11 @@
-import React, {useMemo, useRef} from 'react';
+import React, {MutableRefObject, SyntheticEvent, useMemo, useRef} from 'react';
 import {useGetAllTodos, useAddTudoMutation} from '../../api/todos.api';
 import PageTitle from '../../components/PageTitle';
 import styled from 'styled-components';
 import TodosItem from './todos-item';
 import Todo from '../../interfaces/Todo';
 import Button from '../../components/Button';
+import Input from '../../components/Input';
 
 const MainPanel = styled.div`
   display: flex;
@@ -31,10 +32,6 @@ const InputArea = styled.div`
   padding-left: 8px;
 `;
 
-const Input = styled.input`
-  width: 100%;
-`;
-
 const ButtonArea = styled.div`
   display: grid;
   justify-items: center;
@@ -50,7 +47,8 @@ const TodosPage = () => {
   if (todos.isLoading) return null;
   if (todos.error) return null;
 
-  const handleAddClick = () => {
+  const handleAddClick = (e: SyntheticEvent) => {
+    e.preventDefault();
     if (textInput?.current?.value) {
       addTodo.mutate(textInput.current.value);
       textInput.current.setAttribute('value', '');
@@ -70,7 +68,7 @@ const TodosPage = () => {
           <Input ref={textInput} />
         </InputArea>
         <ButtonArea>
-          <Button disabled={addTodo.isLoading} onClick={handleAddClick}>
+          <Button primary disabled={addTodo.isLoading} onClick={handleAddClick}>
             Add
           </Button>
         </ButtonArea>

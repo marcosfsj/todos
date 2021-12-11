@@ -1,30 +1,16 @@
-import React from 'react';
 import styled from 'styled-components';
 
-interface BtnProps {
+interface ButtonProps {
   primary?: boolean;
   secondary?: boolean;
 }
 
-const Btn = styled.button<BtnProps>`
-  color: ${({primary}: BtnProps) => (primary ? 'red' : 'blue')};
+const Button = styled.button<ButtonProps>`
+  color: ${({primary, theme}) =>
+    primary ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText};
+  background-color: ${({primary, theme}) =>
+    primary ? theme.palette.primary.main : theme.palette.secondary.main};
   width: 100px;
 `;
 
-interface ButtonProps {
-  children: React.ReactNode;
-  primary?: boolean;
-  secondary?: boolean;
-  disabled?: boolean;
-  onClick: () => void;
-}
-
-const Button = ({children, primary, secondary, disabled, onClick}: ButtonProps) => {
-  return (
-    <Btn primary={primary} secondary={secondary} disabled={disabled} onClick={onClick}>
-      {children}
-    </Btn>
-  );
-};
-
-export default React.memo(Button);
+export default Button;
