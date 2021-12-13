@@ -8,7 +8,6 @@ const Line = styled.div`
   grid-template-columns: repeat(1, 30px 2fr 1fr);
   align-items: center;
   width: 80vw;
-  height: 40px;
   border: 1px solid black;
 `;
 

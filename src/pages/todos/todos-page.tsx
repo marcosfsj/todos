@@ -1,4 +1,4 @@
-import React, {MutableRefObject, SyntheticEvent, useMemo, useRef} from 'react';
+import React, {SyntheticEvent, useMemo, useRef} from 'react';
 import {useGetAllTodos, useAddTudoMutation} from '../../api/todos.api';
 import PageTitle from '../../components/PageTitle';
 import styled from 'styled-components';
@@ -23,13 +23,11 @@ const AddNewTodoArea = styled.div`
   justify-content: center;
   align-items: center;
   width: 80vw;
-  height: 40px;
   border: 1px solid black;
 `;
 
 const InputArea = styled.div`
-  justify-items: center;
-  padding-left: 8px;
+  padding: 8px;
 `;
 
 const ButtonArea = styled.div`

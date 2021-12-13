@@ -10,7 +10,6 @@ const Button = styled.button<ButtonProps>`
     primary ? theme.palette.primary.contrastText : theme.palette.secondary.contrastText};
   background-color: ${({primary, theme}) =>
     primary ? theme.palette.primary.main : theme.palette.secondary.main};
-  width: 100px;
 `;
 
 export default Button;

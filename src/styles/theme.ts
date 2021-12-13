@@ -9,12 +9,12 @@ const themePrimary: DefaultTheme = {
       white: '#ffffff',
     },
     primary: {
-      main: '#726a95',
+      main: 'rgb(46, 170, 220)',
       contrastText: '#ffffff',
     },
     secondary: {
-      main: '#709fb0',
-      contrastText: '#ffffff',
+      main: 'rgb(209, 224, 230)',
+      contrastText: '#222831',
     },
   },
 };

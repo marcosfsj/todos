@@ -12,7 +12,6 @@ function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <GlobalStyle />
         <Spinner />
         <NavBar />
         <Routes>
@@ -21,6 +20,7 @@ function App() {
           <Route path="/todos-page" element={<TodosPage />} />
           <Route path="/form-page" element={<FormPage />} />
         </Routes>
+        <GlobalStyle />
       </ThemeProvider>
     </>
   );
