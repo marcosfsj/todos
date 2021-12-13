@@ -2,6 +2,7 @@ import React from 'react';
 import {useDeleteTodoMutation, useToggleTodoCompletedMutation} from '../../api/todos.api';
 import Button from '../../components/Button';
 import styled from 'styled-components';
+import {FaTrash} from 'react-icons/fa';
 
 const Line = styled.div`
   display: grid;
@@ -9,6 +10,7 @@ const Line = styled.div`
   align-items: center;
   width: 80vw;
   border: 1px solid black;
+  height: 50px;
 `;
 
 const CheckBoxArea = styled.div`
@@ -59,7 +61,7 @@ const TodosItem = ({_id, description, completed}: TodosItemProps) => {
       </DescriptionArea>
       <DeleteButtonArea>
         <Button secondary onClick={handleDeleteClick}>
-          Delete
+          Delete <FaTrash />
         </Button>
       </DeleteButtonArea>
     </Line>

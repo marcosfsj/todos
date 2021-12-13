@@ -45,8 +45,7 @@ const TodosPage = () => {
   if (todos.isLoading) return null;
   if (todos.error) return null;
 
-  const handleAddClick = (e: SyntheticEvent) => {
-    e.preventDefault();
+  const handleAddClick = () => {
     if (textInput?.current?.value) {
       addTodo.mutate(textInput.current.value);
       textInput.current.setAttribute('value', '');
