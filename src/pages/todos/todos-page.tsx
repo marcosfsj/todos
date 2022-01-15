@@ -1,4 +1,4 @@
-import React, {SyntheticEvent, useMemo, useRef} from 'react';
+import {useMemo, useRef} from 'react';
 import {useGetAllTodos, useAddTudoMutation} from '../../api/todos.api';
 import PageTitle from '../../components/PageTitle';
 import styled from 'styled-components';
@@ -36,7 +36,7 @@ const ButtonArea = styled.div`
   padding-left: 7px;
 `;
 
-const TodosPage = () => {
+const TodosPage = (): JSX.Element | null => {
   const todos = useGetAllTodos();
   const addTodo = useAddTudoMutation();
   const todosCount = useMemo(() => todos.data && todos.data.length, [todos]);

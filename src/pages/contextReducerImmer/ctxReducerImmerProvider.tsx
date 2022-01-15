@@ -6,7 +6,7 @@ interface InitialState {
 }
 
 interface Action {
-  type: string;
+  type: 'updateState' | 'deleteState';
   payload: string;
 }
 

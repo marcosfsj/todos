@@ -1,4 +1,3 @@
-import React from 'react';
 import {useDeleteTodoMutation, useToggleTodoCompletedMutation} from '../../api/todos.api';
 import Button from '../../components/Button';
 import styled from 'styled-components';
@@ -34,7 +33,7 @@ interface TodosItemProps {
   completed: boolean;
 }
 
-const TodosItem = ({_id, description, completed}: TodosItemProps) => {
+const TodosItem = ({_id, description, completed}: TodosItemProps): JSX.Element => {
   const deleteTodo = useDeleteTodoMutation();
   const toggleTodoCompleted = useToggleTodoCompletedMutation();
 
