@@ -28,21 +28,21 @@ const DeleteButtonArea = styled.div`
 `;
 
 interface TodosItemProps {
-  _id: number;
+  id: number;
   description: string;
   completed: boolean;
 }
 
-const TodosItem = ({_id, description, completed}: TodosItemProps): JSX.Element => {
+const TodosItem = ({id, description, completed}: TodosItemProps): JSX.Element => {
   const deleteTodo = useDeleteTodoMutation();
   const toggleTodoCompleted = useToggleTodoCompletedMutation();
 
   const handleDeleteClick = () => {
-    deleteTodo.mutate(_id);
+    deleteTodo.mutate(id);
   };
 
   const handleToggleCompleted = () => {
-    toggleTodoCompleted.mutate({_id, description, completed});
+    toggleTodoCompleted.mutate({id, description, completed});
   };
 
   return (

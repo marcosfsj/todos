@@ -5,7 +5,7 @@ import uiState from './ui-state';
 
 const LevelOne = (): JSX.Element => {
   const snap = useSnapshot(uiState);
-  console.log('render one');
+
   return (
     <>
       <div>Level One - {snap.text}</div>

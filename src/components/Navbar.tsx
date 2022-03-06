@@ -19,6 +19,8 @@ const NavBar = () => {
       <StyledLink to="/form-page">React hook form</StyledLink>
       <StyledLink to="/context-reducer-immer">Context Reducer Immer</StyledLink>
       <StyledLink to="/valtio">Valtio</StyledLink>
+      <StyledLink to="/rerendering">Re-rendering</StyledLink>
+      <StyledLink to="/drag-drop">Drag Drop</StyledLink>
     </Bar>
   );
 };

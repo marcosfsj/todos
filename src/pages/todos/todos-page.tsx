@@ -56,8 +56,8 @@ const TodosPage = (): JSX.Element | null => {
     <MainPanel>
       <PageTitle title={`React Query Todos - count ${todosCount}`} />
       <Table>
-        {todos.data.map(({_id, description, completed}: Todo) => (
-          <TodosItem key={_id} _id={_id} description={description} completed={completed} />
+        {todos.data.map(({id, description, completed}: Todo) => (
+          <TodosItem key={id} id={id} description={description} completed={completed} />
         ))}
       </Table>
       <AddNewTodoArea>

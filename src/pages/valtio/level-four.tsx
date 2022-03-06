@@ -4,7 +4,7 @@ import uiState from './ui-state';
 
 const LevelFour = (): JSX.Element => {
   const snap = useSnapshot(uiState);
-  console.log('render four');
+
   return (
     <>
       <div>Level Four - {snap.text}</div>

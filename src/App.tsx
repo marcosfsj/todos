@@ -8,6 +8,8 @@ import NavBar from './components/Navbar';
 import GlobalStyle from './styles/global';
 import {ThemeProvider} from 'styled-components';
 import theme from './styles/theme';
+import CompOne from './pages/rerendering/CompOne';
+import DragDrop from './pages/dragdrop/DragDrop';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
           <Route path="/form-page" element={<FormPage />} />
           <Route path="/context-reducer-immer" element={<FirstLevel />} />
           <Route path="/valtio" element={<LevelOne />} />
+          <Route path="/rerendering" element={<CompOne />} />
+          <Route path="/drag-drop" element={<DragDrop />} />
         </Routes>
         <GlobalStyle />
       </ThemeProvider>
